@@ -42,45 +42,47 @@ export default function Home() {
   //     </div>
   //   );
   // }
+  
+
   // ! yang dibawah stuck
-  // let startTime = Date.now();
-  // const duration = 4000; // 4 detik
+  let startTime = Date.now();
+  const duration = 4000; // 4 detik
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setBlink((prev) => !prev);
-  //   }, 500);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBlink((prev) => !prev);
+    }, 500);
     
-  //   const progressInterval = setInterval(() => {
-  //     const elapsed = Date.now() - startTime;
-  //     const easedProgress = Math.min(20 + (elapsed / duration) * 80, 100);
-  //     setProgress(easedProgress);
-  //     if (easedProgress >= 100) {
-  //       clearInterval(progressInterval);
-  //       setTimeout(() => setLoading(false), 500);
-  //     }
-  //   }, 50);
-  //   if (progress === 100) {
-  //     setLoading(false);
-  //   }
+    const progressInterval = setInterval(() => {
+      const elapsed = Date.now() - startTime;
+      const easedProgress = Math.min(20 + (elapsed / duration) * 80, 100);
+      setProgress(easedProgress);
+      if (easedProgress >= 100) {
+        clearInterval(progressInterval);
+        setTimeout(() => setLoading(false), 500);
+      }
+    }, 50);
+    if (progress === 100) {
+      setLoading(false);
+    }
     
-  //   return () => {
-  //     clearInterval(interval);
-  //     clearInterval(progressInterval);
-  //   };
-  // }, [progress]);
+    return () => {
+      clearInterval(interval);
+      clearInterval(progressInterval);
+    };
+  }, [progress]);
 
-  // if (loading) {
-  //   return (
-  //     <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white pixel-font">
-  //       <h1 className={`text-yellow-400 text-4xl animate-glitch`}>Loading {progress}%</h1>
-  //       <div className="w-1/2 h-4 bg-gray-700 border-4 border-white mt-4 relative overflow-hidden">
-  //         <div className="h-full bg-yellow-400" style={{ width: `${progress}%`, transition: 'width 0.5s linear' }} />
-  //       </div>
-  //       <p className="text-gray-500 mt-4 text-sm">Website masih dalam tahap pengembangan...</p>
-  //     </div>
-  //   );
-  // }
+  if (loading) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white pixel-font">
+        <h1 className={`text-yellow-400 text-4xl animate-glitch`}>Loading {progress}%</h1>
+        <div className="w-1/2 h-4 bg-gray-700 border-4 border-white mt-4 relative overflow-hidden">
+          <div className="h-full bg-yellow-400" style={{ width: `${progress}%`, transition: 'width 0.5s linear' }} />
+        </div>
+        <p className="text-gray-500 mt-4 text-sm">Website masih dalam tahap pengembangan...</p>
+      </div>
+    );
+  }
 
   return (
     <div className={`min-h-screen flex flex-col items-center justify-center pixel-font ${darkMode ? 'bg-gray-900' : 'bg-black'}`}>
