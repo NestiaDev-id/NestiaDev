@@ -1,6 +1,4 @@
 "use client"
-import Image from "next/image";
-import localFont from "next/font/local";
 import { useEffect, useState } from "react";
 
 
