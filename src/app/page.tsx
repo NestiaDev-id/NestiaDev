@@ -14,27 +14,22 @@ export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(20);
-  const [glitch, setGlitch] = useState(false);
   
   // useEffect(() => {
   //   const interval = setInterval(() => {
   //     setBlink((prev) => !prev);
   //   }, 500);
-    
-  //   const glitchInterval = setInterval(() => {
-  //     setGlitch((prev) => !prev);
-  //   }, 300);
+
     
   //   return () => {
   //     clearInterval(interval);
-  //     clearInterval(glitchInterval);
   //   };
   // }, []);
 
   // if (loading) {
   //   return (
   //     <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white pixel-font">
-  //       <h1 className={`text-yellow-400 text-4xl ${glitch ? "animate-glitch" : "animate-pulse"}`}>Loading {progress}%</h1>
+  //       <h1 className={`text-yellow-400 text-4xl`}>Loading {progress}%</h1>
   //       <div className="w-1/2 h-4 bg-gray-700 border-4 border-white mt-4 relative overflow-hidden">
   //         <div className="h-full bg-yellow-400 w-1/5 animate-none" />
   //       </div>
@@ -86,6 +81,16 @@ export default function Home() {
 
   return (
     <div className={`min-h-screen flex flex-col items-center justify-center pixel-font ${darkMode ? 'bg-gray-900' : 'bg-black'}`}>
+      <nav className="w-full p-4 bg-gray-800 text-white flex justify-between items-center">
+        <h1 className="text-yellow-400 text-xl">NestiaDev</h1>
+        <ul className="flex space-x-4">
+          <li><a href="#" className="hover:text-yellow-400">Home</a></li>
+          <li><a href="#" className="hover:text-yellow-400">Projects</a></li>
+          <li><a href="#" className="hover:text-yellow-400">About</a></li>
+          <li><a href="#" className="hover:text-yellow-400">Contact</a></li>
+        </ul>
+      </nav>
+
       <h1 className={`text-yellow-400 text-4xl m-10 ${blink ? "opacity-100" : "opacity-50"}`}>
         Selamat Datang di Portofolio Saya!
       </h1>
