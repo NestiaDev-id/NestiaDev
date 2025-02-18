@@ -19,19 +19,29 @@ export default function Home() {
   //   const interval = setInterval(() => {
   //     setBlink((prev) => !prev);
   //   }, 500);
-
+    
+   
+    
+  //   const progressInterval = setInterval(() => {
+  //     setProgress((prev) => (prev < 100 ? prev + 2 : 100));
+  //   }, 75);
+    
+  //   if (progress === 100) {
+  //     setLoading(false);
+  //   }
     
   //   return () => {
   //     clearInterval(interval);
+  //     clearInterval(progressInterval);
   //   };
-  // }, []);
+  // }, [progress]);
 
   // if (loading) {
   //   return (
   //     <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white pixel-font">
-  //       <h1 className={`text-yellow-400 text-4xl`}>Loading {progress}%</h1>
+  //       <h1 className={`text-yellow-400 text-4xl animate-glitch`}>Loading {progress}%</h1>
   //       <div className="w-1/2 h-4 bg-gray-700 border-4 border-white mt-4 relative overflow-hidden">
-  //         <div className="h-full bg-yellow-400 w-1/5 animate-none" />
+  //         <div className="h-full bg-yellow-400" style={{ width: `${progress}%`, transition: 'width 0.5s linear' }} />
   //       </div>
   //       <p className="text-gray-500 mt-4 text-sm">Website masih dalam tahap pengembangan...</p>
   //     </div>
